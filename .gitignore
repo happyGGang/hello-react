@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# webstrom
+.idea
+
+
 # production
 /build
 
