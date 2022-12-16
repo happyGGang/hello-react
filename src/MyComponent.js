@@ -1,7 +1,8 @@
-const  MyComponent = () => {
+const  MyComponent = (props) => {
   return (
-    <div>컴포넌트 생성 테스트</div>
+    <div>{props.name}입니다</div>
   )
 }
+
 
 export default MyComponent;
