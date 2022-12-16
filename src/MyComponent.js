@@ -1,8 +1,9 @@
 const  MyComponent = (props) => {
+  const { name, age } = props;
   return (
     <>
-      <div>{props.name}입니다</div>
-      <div>{props.age}입니다</div>
+      <div>{name}입니다</div>
+      <div>{age}입니다</div>
     </>
   )
 }
