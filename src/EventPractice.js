@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const EventPractice = () => {
-  const [names, setName] = useState([
+  const [names, setNames] = useState([
     {id: 1, name: 'name1'},
     {id: 2, name: 'name2'},
     {id: 3, name: 'name3'}
@@ -9,7 +9,12 @@ const EventPractice = () => {
   const [input, setInput] = useState('');
   const [nextId, setNextId] = useState(4);
 
-  const nameList = names.map(name => <li key={name.id}>{name.name}</li>);
+  const onRemove = (id) => {
+    const nextNames = names.filter(name => name.id !== id);
+    setNames(nextNames);
+  }
+
+  const nameList = names.map(name => <li onDoubleClick={() => onRemove(name.id)} key={name.id}>{name.name}</li>);
 
   const onChange = (e) => {
     setInput(e.target.value);
@@ -21,7 +26,7 @@ const EventPractice = () => {
       name: input
     })
     setNextId(nextId + 1);
-    setName(nextNames);
+    setNames(nextNames);
     setInput('');
   };
   return (
